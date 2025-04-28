@@ -1,140 +1,174 @@
-Laravel Product & Cart Management System
+# Laravel Product & Cart Management System
 
-Project Setup Instructions
+A complete backend system for managing **Products** (with multiple images) and **Cart** operations, built using **Laravel 10**, **PHP 8+**, and **MySQL 8+**.
 
-This project is built using Laravel, PHP 8+, and MySQL 8+.
-It includes a complete backend system with API development for Product and Cart Management.
-
+This project includes APIs for product management, cart operations, and a simple Admin Panel UI with clean UX/UI practices.
 
 ---
 
-1. Clone the Repository
+## Project Details
 
+**Task Description:**
+
+✅ Phase 1:
+- Create MySQL database with Products (Name, Price, Multiple Images).
+- Build backend in MVC framework (Laravel) for Product CRUD with multiple images.
+- Develop a **GET API** to fetch all products with images.
+
+✅ Phase 2:
+- Create **POST API** to add products to the cart (User ID hardcoded as `1`).
+- Display all cart items in Admin Panel using a **GET API**.
+- Checkout API with payment gateway integration.
+  
+**Minimum Requirements:**
+- PHP 8+
+- MySQL 8+
+- Laravel framework
+- Postman Collection
+- Proper exception handling, UI/UX focus, clean code and folder structure.
+
+---
+
+## Tech Stack
+
+- **PHP 8+**
+- **Laravel 10**
+- **MySQL 8+**
+- **Bootstrap** (for Admin Panel UI)
+- **Postman** (for API documentation)
+
+---
+
+## Installation & Setup Instructions
+
+Follow the steps below to run the project locally:
+
+### 1. Clone the Repository
+
+```bash
 git clone https://github.com/SandeepSDE-eng/Sandeep-task.git
 cd Sandeep-task
-
+```
 
 ---
 
-2. Install Dependencies
+### 2. Install Dependencies
 
+Make sure Composer is installed: [Install Composer](https://getcomposer.org/)
+
+```bash
 composer install
-
-Make sure you have Composer installed on your system.
-If not, install it from https://getcomposer.org/.
-
+```
 
 ---
 
-3. Database Setup
+### 3. Database Setup
 
-Import the database backup file (database.sql) which is provided in the root folder into your MySQL server.
-
-Create a new database if required before importing.
-
-
+- Create a new database in your MySQL server (e.g., `sandeep_task`).
+- Import the provided **`database.sql`** file located in the root directory into your newly created database.
 
 ---
 
-4. Environment Configuration
+### 4. Environment Configuration
 
-Copy the .env.example file and create a new .env file:
+- Copy `.env.example` to `.env`:
 
-
+```bash
 cp .env.example .env
+```
 
-Update the following database credentials in your .env file:
+- Update the following database credentials in your `.env` file:
 
-
+```dotenv
 DB_DATABASE=your_database_name
 DB_USERNAME=your_database_username
 DB_PASSWORD=your_database_password
-
+```
 
 ---
 
-5. Migrate the Database
+### 5. Migrate the Database (Optional)
 
+Since the tables are already included via SQL file, migration is optional.
+
+To re-run migrations:
+
+```bash
 php artisan migrate
-
-Note: Since database tables are already included via SQL file, migration is optional unless you want to regenerate.
-
+```
 
 ---
 
-6. Run the Application
+### 6. Run the Application
 
+Start the Laravel server:
+
+```bash
 php artisan serve
+```
 
 The application will be accessible at:
-http://127.0.0.1:8000
 
-
----
-
-7. Admin Panel Credentials
-
-Login to the Admin Panel using the above credentials.
-
+> **http://127.0.0.1:8000**
 
 ---
 
-APIs Available
+## Admin Panel Access
 
-Product APIs:
+Login Credentials:
 
-Get all products with multiple images.
+- **Email:** `admin@example.com`
+- **Password:** `admin1234`
 
-CRUD operations for Products (Admin Panel).
-
-
-Cart APIs:
-
-Add product to cart (POST).
-
-Update cart item (PUT).
-
-Delete cart item (DELETE).
-
-Get cart items listing with total (GET).
-
-Checkout API (with payment gateway integration).
-
-
-Postman Collection:
-
-API documentation and collection are included in the project folder.
-
-
+You can log into the Admin Panel to manage Products and view Cart details.
 
 ---
 
-Tech Stack
+## API List
 
-PHP 8+
+### Product APIs
+- **GET**: `/api/products` – Get all products with multiple images.
+- **POST**: `/api/products` – Add a new product with images.
+- **PUT**: `/api/products/{id}` – Update a product.
+- **DELETE**: `/api/products/{id}` – Delete a product.
 
-Laravel 10
-
-MySQL 8+
-
-Bootstrap (for Admin Panel UI)
-
-Postman (for API documentation)
-
-
-
----
-
-Important Notes
-
-Exception handling and validation are properly managed in APIs.
-
-UI/UX for CMS is kept simple, clean, and user-friendly.
-
-Clear coding standards and folder structure followed.
-
-
+### Cart APIs
+- **POST**: `/api/cart/add` – Add product to cart.
+- **PUT**: `/api/cart/update/{id}` – Update cart item.
+- **DELETE**: `/api/cart/delete/{id}` – Delete cart item.
+- **GET**: `/api/cart/list` – List cart items with total.
+- **POST**: `/api/cart/checkout` – Checkout cart items (Payment integration).
 
 ---
 
-Thank You!
+## Postman Collection
+
+The **Postman Collection** for all APIs is included inside the project under the `postman_collection.json` file.
+
+You can directly import it into Postman to test all the available APIs.
+
+---
+
+## Important Notes
+
+- Exception handling and request validation are properly managed in APIs.
+- Admin Panel UI is kept clean, user-friendly, and responsive.
+- Code follows clean coding standards and best practices.
+- Folder structure is well organized and easy to navigate.
+
+---
+
+## Project Submission
+
+✅ GitHub repository submitted  
+✅ Database backup file (`database.sql`) included  
+✅ API documentation via Postman provided  
+✅ Exception handling properly implemented  
+✅ Clear setup documentation provided (this README)
+
+---
+
+## Thank You!
+
+> **All the best! Feel free to reach out if you face any issues.**
+
